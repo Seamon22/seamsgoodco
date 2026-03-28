@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Activities — SeamsGoodCo. · 14 Sports & Games · New Jersey</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --black:      #0D0D0D;
+  --white:      #FFFFFF;
+  --offwhite:   #F5F2EC;
+  --cream:      #F4F1EC;
+  --cream-dark: #EAE6DE;
+  --stone:      #C8BEA8;
+  --pebble:     #A8A090;
+  --dark-stone: #3A3530;
+  --text-muted: #9E9A92;
+  --border:     rgba(200,190,168,0.3);
+  --font-display: 'Raleway', sans-serif;
+  --font-serif:   'Cormorant Garamond', serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--black);
+  font-family: var(--font-display);
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; }
+.container { max-width: 1180px; margin: 0 auto; padding: 0 40px; }
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity:0; }
+  to   { opacity:1; }
+}
+
+/* ─── ANNOUNCEMENT ──────────────────────────────────────────── */
+.announcement {
+  background: var(--dark-stone);
+  color: var(--stone);
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.announcement a {
+  color: var(--offwhite);
+  border-bottom: 1px solid rgba(245,242,236,0.3);
+  padding-bottom: 1px;
+  margin-left: 8px;
+  transition: border-color 0.2s;
+}
+.announcement a:hover { border-color: var(--offwhite); }
+
+/* ─── NAV ───────────────────────────────────────────────────── */
+nav {
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(244,241,236,0.92);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--black); }
+.nav-cta { display: flex; align-items: center; gap: 16px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  outline: none;
+}
+.btn-primary { background: var(--black); color: var(--offwhite); }
+.btn-primary:hover { background: var(--dark-stone); transform: translateY(-1px); }
+.btn-outline {
+  background: transparent;
+  color: var(--black);
+  border: 1px solid var(--border);
+}
+.btn-outline:hover {
+  border-color: var(--black);
+  background: var(--black);
+  color: var(--offwhite);
+}
+.btn-lg { font-size: 12px; padding: 16px 36px; }
+
+/* ─── PAGE HERO ─────────────────────────────────────────────── */
+.page-hero {
+  background: var(--dark-stone);
+  padding: 88px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg, transparent, transparent 48px,
+    rgba(200,190,168,0.03) 48px, rgba(200,190,168,0.03) 49px
+  );
+}
+.page-hero-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 60px;
+}
+.page-hero-eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.page-hero-eyebrow::before {
+  content: '';
+  width: 24px; height: 1px;
+  background: var(--stone);
+}
+.page-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 5.5vw, 72px);
+  font-weight: 300;
+  letter-spacing: -.025em;
+  line-height: 1.02;
+  color: var(--offwhite);
+  margin-bottom: 20px;
+}
+.page-hero h1 em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--stone);
+}
+.page-hero-sub {
+  font-size: 15px;
+  color: rgba(200,190,168,0.55);
+  max-width: 480px;
+  line-height: 1.7;
+  font-weight: 400;
+}
+.page-hero-stat {
+  text-align: right;
+  flex-shrink: 0;
+}
+.page-hero-stat-num {
+  font-family: var(--font-display);
+  font-size: 96px;
+  font-weight: 300;
+  color: rgba(200,190,168,0.12);
+  line-height: 1;
+  letter-spacing: -.04em;
+}
+.page-hero-stat-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--stone);
+  opacity: 0.5;
+}
+
+/* ─── FILTER BAR ────────────────────────────────────────────── */
+.filter-bar {
+  background: var(--offwhite);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 72px;
+  z-index: 90;
+}
+.filter-inner {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 56px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.filter-inner::-webkit-scrollbar { display: none; }
+.filter-btn {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 8px 18px;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  background: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.18s;
+  outline: none;
+}
+.filter-btn:hover {
+  color: var(--black);
+  background: var(--cream-dark);
+}
+.filter-btn.active {
+  color: var(--black);
+  border-color: var(--border);
+  background: var(--white);
+}
+.filter-count {
+  font-size: 9px;
+  background: var(--stone);
+  color: var(--dark-stone);
+  padding: 1px 5px;
+  border-radius: 10px;
+  margin-left: 4px;
+  font-weight: 700;
+}
+
+/* ─── ACTIVITIES GRID ───────────────────────────────────────── */
+.activities-section { padding: 64px 0 100px; }
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+/* Activity card */
+.activity-card {
+  background: var(--offwhite);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid transparent;
+  transition: all 0.25s var(--ease-out);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.activity-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--stone);
+  transform: scaleX(0);
+  transition: transform 0.25s var(--ease-out);
+  transform-origin: left;
+}
+.activity-card:hover {
+  background: var(--white);
+  border-color: var(--border);
+  transform: translateY(-3px);
+  z-index: 2;
+  box-shadow: 0 8px 32px rgba(58,53,48,0.08);
+}
+.activity-card:hover::after { transform: scaleX(1); }
+.activity-card.hidden { display: none; }
+
+/* Featured card — Golf spans 2 cols */
+.activity-card.featured {
+  grid-column: span 2;
+  background: var(--dark-stone);
+  flex-direction: row;
+}
+.activity-card.featured:hover {
+  background: var(--black);
+  transform: translateY(-3px);
+}
+
+.activity-visual {
+  height: 180px;
+  background: var(--cream-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.activity-card.featured .activity-visual {
+  width: 280px;
+  height: auto;
+  background: rgba(0,0,0,0.25);
+}
+.activity-visual-icon {
+  opacity: 0.18;
+  transition: opacity 0.25s;
+}
+.activity-card:hover .activity-visual-icon { opacity: 0.28; }
+.activity-card.featured .activity-visual-icon { opacity: 0.25; }
+.activity-card.featured:hover .activity-visual-icon { opacity: 0.35; }
+
+.activity-tag-pill {
+  position: absolute;
+  top: 14px; left: 14px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 2px;
+}
+.tag-golf     { background: var(--dark-stone); color: var(--stone); border: 1px solid rgba(200,190,168,0.25); }
+.tag-sports   { background: var(--cream-dark); color: var(--pebble); border: 1px solid var(--border); }
+.tag-party    { background: var(--cream-dark); color: var(--pebble); border: 1px solid var(--border); }
+.tag-kids     { background: var(--cream-dark); color: var(--pebble); border: 1px solid var(--border); }
+.tag-corp     { background: var(--cream-dark); color: var(--pebble); border: 1px solid var(--border); }
+.tag-featured {
+  position: absolute;
+  top: 14px; right: 14px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 2px;
+  background: var(--stone);
+  color: var(--dark-stone);
+}
+
+.activity-body {
+  padding: 28px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.activity-card.featured .activity-body {
+  padding: 36px 36px 36px 32px;
+  justify-content: center;
+}
+.activity-name {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--black);
+  letter-spacing: -.01em;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.activity-card.featured .activity-name {
+  font-size: 26px;
+  color: var(--offwhite);
+  margin-bottom: 10px;
+}
+.activity-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 18px;
+  flex: 1;
+}
+.activity-card.featured .activity-desc {
+  color: rgba(200,190,168,0.55);
+  font-size: 14px;
+  max-width: 360px;
+}
+.activity-modes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+.mode-pill {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 2px;
+  background: var(--cream);
+}
+.activity-card.featured .mode-pill {
+  background: rgba(200,190,168,0.1);
+  border-color: rgba(200,190,168,0.2);
+  color: rgba(200,190,168,0.6);
+}
+.activity-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.activity-card.featured .activity-meta {
+  border-top-color: rgba(200,190,168,0.15);
+}
+.activity-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.activity-meta-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+.activity-meta-value {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+.activity-card.featured .activity-meta-value {
+  color: rgba(200,190,168,0.5);
+}
+
+/* ─── CATEGORY DIVIDERS ─────────────────────────────────────── */
+.category-header {
+  grid-column: span 3;
+  padding: 48px 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2px;
+}
+.category-header:first-child { padding-top: 0; }
+.category-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+.category-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.category-num {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  color: var(--text-muted);
+}
+
+/* ─── BOTTOM CTA ────────────────────────────────────────────── */
+.activities-cta {
+  margin-top: 80px;
+  background: var(--dark-stone);
+  padding: 60px 56px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.activities-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg, transparent, transparent 40px,
+    rgba(200,190,168,0.025) 40px, rgba(200,190,168,0.025) 41px
+  );
+}
+.cta-text { position: relative; z-index: 2; }
+.cta-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 10px;
+  opacity: 0.7;
+}
+.cta-title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--offwhite);
+  letter-spacing: -.02em;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+.cta-title em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--stone);
+}
+.cta-sub {
+  font-size: 13px;
+  color: rgba(200,190,168,0.45);
+  line-height: 1.6;
+}
+.cta-actions {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.btn-offwhite {
+  background: var(--offwhite);
+  color: var(--dark-stone);
+  width: 100%;
+  justify-content: center;
+  font-size: 11px;
+  padding: 14px 32px;
+  letter-spacing: .16em;
+}
+.btn-offwhite:hover { background: var(--white); transform: translateY(-1px); }
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(200,190,168,0.25);
+  color: rgba(200,190,168,0.55);
+  width: 100%;
+  justify-content: center;
+  font-size: 11px;
+  padding: 14px 32px;
+  letter-spacing: .16em;
+}
+.btn-ghost:hover { border-color: var(--stone); color: var(--stone); }
+
+/* ─── FOOTER ────────────────────────────────────────────────── */
+footer {
+  background: var(--dark-stone);
+  padding: 56px 0 28px;
+  border-top: 1px solid rgba(200,190,168,0.1);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+.footer-brand p {
+  font-size: 13px;
+  color: rgba(200,190,168,0.4);
+  line-height: 1.7;
+  max-width: 240px;
+  margin-top: 16px;
+  font-weight: 400;
+}
+.footer-col-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 20px;
+}
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.footer-links a {
+  font-size: 13px;
+  color: rgba(200,190,168,0.4);
+  font-weight: 400;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--stone); }
+.footer-bottom {
+  border-top: 1px solid rgba(200,190,168,0.1);
+  padding-top: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-bottom p { font-size: 11px; color: rgba(200,190,168,0.25); letter-spacing: .04em; }
+
+/* ─── RESPONSIVE ────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .activities-grid { grid-template-columns: 1fr 1fr; }
+  .activity-card.featured { grid-column: span 2; flex-direction: column; }
+  .activity-card.featured .activity-visual { width: 100%; height: 200px; }
+  .category-header { grid-column: span 2; }
+  .page-hero-inner { grid-template-columns: 1fr; }
+  .page-hero-stat { display: none; }
+  .activities-cta { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+}
+@media (max-width: 580px) {
+  .activities-grid { grid-template-columns: 1fr; }
+  .activity-card.featured { grid-column: span 1; }
+  .category-header { grid-column: span 1; }
+}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT -->
+<div class="announcement">
+  Now booking for NJ events · Summer availability filling fast
+  <a href="index.html#book">Check your date →</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="SeamsGoodCo. Home">
+        <svg width="48" height="48" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="110" cy="110" r="104" fill="none" stroke="#0D0D0D" stroke-width="2.5"/>
+          <circle cx="110" cy="110" r="97" fill="none" stroke="#C8BEA8" stroke-width="0.85"/>
+          <text x="110" y="52" font-family="'Raleway',sans-serif" font-size="11" font-weight="400" fill="#C8BEA8" text-anchor="middle" dominant-baseline="central" letter-spacing="5">THE</text>
+          <text x="110" y="88" font-family="'Raleway',sans-serif" font-size="34" font-weight="600" fill="#0D0D0D" text-anchor="middle" dominant-baseline="central" letter-spacing="3">SEAMS</text>
+          <line x1="62" y1="107" x2="158" y2="107" stroke="#C8BEA8" stroke-width="0.85"/>
+          <text x="110" y="131" font-family="'Raleway',sans-serif" font-size="34" font-weight="600" fill="#0D0D0D" text-anchor="middle" dominant-baseline="central" letter-spacing="3">GOOD</text>
+          <text x="110" y="166" font-family="'Raleway',sans-serif" font-size="11" font-weight="400" fill="#C8BEA8" text-anchor="middle" dominant-baseline="central" letter-spacing="7">CO.</text>
+        </svg>
+      </a>
+      <ul class="nav-links">
+        <li><a href="activities.html" class="active">Activities</a></li>
+        <li><a href="index.html#how">How It Works</a></li>
+        <li><a href="index.html#pricing">Pricing</a></li>
+        <li><a href="index.html#area">Service Area</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="tel:+17325550100" class="btn btn-outline">Call Us</a>
+        <a href="index.html#book" class="btn btn-primary">Book Now</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div>
+        <div class="page-hero-eyebrow">The full lineup</div>
+        <h1>Every sport.<br><em>One setup.</em></h1>
+        <p class="page-hero-sub">From championship golf courses to Zombie Dodgeball, the TruGolf MultiSport simulator brings 14 fully immersive activities to your event. Up to 8 players compete simultaneously — no waiting, no downtime.</p>
+      </div>
+      <div class="page-hero-stat">
+        <div class="page-hero-stat-num">14</div>
+        <div class="page-hero-stat-label">Activities</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="container">
+    <div class="filter-inner">
+      <button class="filter-btn active" data-filter="all" onclick="filterActivities('all', this)">
+        All <span class="filter-count">14</span>
+      </button>
+      <button class="filter-btn" data-filter="golf" onclick="filterActivities('golf', this)">
+        Golf <span class="filter-count">2</span>
+      </button>
+      <button class="filter-btn" data-filter="sports" onclick="filterActivities('sports', this)">
+        Ball Sports <span class="filter-count">5</span>
+      </button>
+      <button class="filter-btn" data-filter="party" onclick="filterActivities('party', this)">
+        Party Games <span class="filter-count">4</span>
+      </button>
+      <button class="filter-btn" data-filter="kids" onclick="filterActivities('kids', this)">
+        Kids &amp; Family <span class="filter-count">3</span>
+      </button>
+      <button class="filter-btn" data-filter="corp" onclick="filterActivities('corp', this)">
+        Corporate <span class="filter-count">4</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ACTIVITIES -->
+<section class="activities-section">
+  <div class="container">
+    <div class="activities-grid" id="activitiesGrid">
+
+      <!-- ── GOLF ── -->
+      <div class="category-header" data-category-label="golf-header">
+        <span class="category-title">Golf</span>
+        <span class="category-line"></span>
+        <span class="category-num">2 activities</span>
+      </div>
+
+      <!-- GOLF SIM — FEATURED -->
+      <div class="activity-card featured" data-category="golf">
+        <div class="activity-visual">
+          <svg class="activity-visual-icon" width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="120" r="40" stroke="#F5F2EC" stroke-width="3"/>
+            <line x1="100" y1="20" x2="100" y2="80" stroke="#F5F2EC" stroke-width="3" stroke-linecap="round"/>
+            <line x1="100" y1="80" x2="140" y2="50" stroke="#F5F2EC" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="100" cy="120" r="6" fill="#F5F2EC"/>
+            <path d="M60 160 Q100 140 140 160" stroke="#C8BEA8" stroke-width="2" stroke-linecap="round" fill="none"/>
+          </svg>
+          <span class="activity-tag-pill tag-golf">Golf Sim</span>
+          <span class="tag-featured">Primary</span>
+        </div>
+        <div class="activity-body">
+          <div class="activity-name">Golf Simulation</div>
+          <div class="activity-desc">Play over 43,000 real courses worldwide — Pebble Beach, Augusta National, St. Andrews, Bethpage Black, and your own home course. Real swing tracking powered by the TruGolf E6 engine with accurate ball flight, wind, and terrain simulation. Track every shot, every stat, every round.</div>
+          <div class="activity-modes">
+            <span class="mode-pill">43,000+ courses</span>
+            <span class="mode-pill">Real swing tracking</span>
+            <span class="mode-pill">Stroke play</span>
+            <span class="mode-pill">Match play</span>
+            <span class="mode-pill">Closest to the pin</span>
+            <span class="mode-pill">Longest drive</span>
+          </div>
+          <div class="activity-meta">
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Players</span>
+              <span class="activity-meta-value">Up to 8</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Best for</span>
+              <span class="activity-meta-value">All events</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Skill level</span>
+              <span class="activity-meta-value">All levels</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOT GOLF -->
+      <div class="activity-card" data-category="golf">
+        <div class="activity-visual">
+          <svg class="activity-visual-icon" width="120" height="120" viewBox="0 0 120 120" fill="none">
+            <circle cx="60" cy="75" r="25" stroke="#0D0D0D" stroke-width="2.5"/>
+            <path d="M42 68 Q50 72 58 68" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M62 68 Q70 72 78 68" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="60" y1="20" x2="60" y2="50" stroke="#0D0D0D" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="60" y1="35" x2="82" y2="25" stroke="#0D0D0D" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="activity-tag-pill tag-golf">Golf</span>
+        </div>
+        <div class="activity-body">
+          <div class="activity-name">Foot Golf</div>
+          <div class="activity-desc">Golf meets soccer — kick instead of swing. Choose from 4 uniquely designed courses and activate Demolition Mode where moving targets explode on impact. Great for non-golfers who want to join the fun.</div>
+          <div class="activity-modes">
+            <span class="mode-pill">4 courses</span>
+            <span class="mode-pill">Demolition mode</span>
+            <span class="mode-pill">Shot boost</span>
+          </div>
+          <div class="activity-meta">
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Players</span>
+              <span class="activity-meta-value">Up to 8</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Best for</span>
+              <span class="activity-meta-value">Mixed groups</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Skill level</span>
+              <span class="activity-meta-value">Beginner-friendly</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── BALL SPORTS ── -->
+      <div class="category-header" data-category-label="sports-header">
+        <span class="category-title">Ball Sports</span>
+        <span class="category-line"></span>
+        <span class="category-num">5 activities</span>
+      </div>
+
+      <!-- RALLY BASEBALL -->
+      <div class="activity-card" data-category="sports">
+        <div class="activity-visual">
+          <svg class="activity-visual-icon" width="120" height="120" viewBox="0 0 120 120" fill="none">
+            <circle cx="60" cy="60" r="30" stroke="#0D0D0D" stroke-width="2.5"/>
+            <path d="M42 48 Q46 60 42 72" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M78 48 Q74 60 78 72" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M48 42 Q54 46 48 54" stroke="#0D0D0D" stroke-width="1" stroke-linecap="round"/>
+            <path d="M72 42 Q66 46 72 54" stroke="#0D0D0D" stroke-width="1" stroke-linecap="round"/>
+          </svg>
+          <span class="activity-tag-pill tag-sports">Baseball</span>
+        </div>
+        <div class="activity-body">
+          <div class="activity-name">Rally Baseball</div>
+          <div class="activity-desc">Step up to the plate for a home run derby-style experience with voice-activated pitching and swing-timing power boosts. Exciting levels of strategy and unique scoring that keep it competitive for every skill level.</div>
+          <div class="activity-modes">
+            <span class="mode-pill">Home run derby</span>
+            <span class="mode-pill">Voice-activated pitch</span>
+            <span class="mode-pill">Power boost</span>
+          </div>
+          <div class="activity-meta">
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Players</span>
+              <span class="activity-meta-value">Up to 8</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Best for</span>
+              <span class="activity-meta-value">All ages</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Equipment</span>
+              <span class="activity-meta-value">Bat included</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INSIDE HEAT -->
+      <div class="activity-card" data-category="sports">
+        <div class="activity-visual">
+          <svg class="activity-visual-icon" width="120" height="120" viewBox="0 0 120 120" fill="none">
+            <rect x="30" y="35" width="60" height="50" rx="4" stroke="#0D0D0D" stroke-width="2.5"/>
+            <rect x="43" y="48" width="34" height="24" rx="2" stroke="#0D0D0D" stroke-width="1.5"/>
+            <circle cx="60" cy="60" r="6" stroke="#0D0D0D" stroke-width="1.5"/>
+            <line x1="60" y1="25" x2="60" y2="35" stroke="#0D0D0D" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+          <span class="activity-tag-pill tag-sports">Baseball</span>
+        </div>
+        <div class="activity-body">
+          <div class="activity-name">Inside Heat</div>
+          <div class="activity-desc">Step onto the pitcher's mound and find the strike zone. Paint corners, challenge the batter's lineup, and dial in your pitch with this precision throwing game. Swing-timing mechanics make it addictive for competitive players.</div>
+          <div class="activity-modes">
+            <span class="mode-pill">Pitching challenge</span>
+            <span class="mode-pill">Strike zone targeting</span>
+            <span class="mode-pill">Voice activation</span>
+          </div>
+          <div class="activity-meta">
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Players</span>
+              <span class="activity-meta-value">Up to 8</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Best for</span>
+              <span class="activity-meta-value">Competitive groups</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Skill level</span>
+              <span class="activity-meta-value">All levels</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLAPSHOT HOCKEY -->
+      <div class="activity-card" data-category="sports">
+        <div class="activity-visual">
+          <svg class="activity-visual-icon" width="120" height="120" viewBox="0 0 120 120" fill="none">
+            <rect x="25" y="72" width="70" height="14" rx="4" stroke="#0D0D0D" stroke-width="2.5"/>
+            <path d="M42 72 L34 38" stroke="#0D0D0D" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="75" cy="55" r="10" stroke="#0D0D0D" stroke-width="2.5"/>
+            <line x1="80" y1="48" x2="95" y2="38" stroke="#0D0D0D" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 3"/>
+          </svg>
+          <span class="activity-tag-pill tag-sports">Hockey</span>
+        </div>
+        <div class="activity-body">
+          <div class="activity-name">Slapshot Hockey</div>
+          <div class="activity-desc">Lace up virtually and transform the simulator into a jam-packed hockey arena. Take on four thrilling play modes and land your slapshot in the net while dodging opposing players. A natural for New Jersey's hockey-mad fans.</div>
+          <div class="activity-modes">
+            <span class="mode-pill">Goalie mode</span>
+            <span class="mode-pill">Target shooting</span>
+            <span class="mode-pill">Blackout</span>
+            <span class="mode-pill">Long shot</span>
+          </div>
+          <div class="activity-meta">
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Players</span>
+              <span class="activity-meta-value">Up to 8</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Best for</span>
+              <span class="activity-meta-value">NJ sports fans</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Equipment</span>
+              <span class="activity-meta-value">Stick included</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BREAKAWAY SOCCER -->
+      <div class="activity-card" data-category="sports">
+        <div class="activity-visual">
+          <svg class="activity-visual-icon" width="120" height="120" viewBox="0 0 120 120" fill="none">
+            <circle cx="60" cy="60" r="28" stroke="#0D0D0D" stroke-width="2.5"/>
+            <polygon points="60,46 66,56 62,66 58,66 54,56" stroke="#0D0D0D" stroke-width="1.5" fill="none"/>
+            <line x1="46" y1="46" x2="54" y2="56" stroke="#0D0D0D" stroke-width="1" stroke-linecap="round"/>
+            <line x1="74" y1="46" x2="66" y2="56" stroke="#0D0D0D" stroke-width="1" stroke-linecap="round"/>
+            <line x1="46" y1="74" x2="54" y2="66" stroke="#0D0D0D" stroke-width="1" stroke-linecap="round"/>
+            <line x1="74" y1="74" x2="66" y2="66" stroke="#0D0D0D" stroke-width="1" stroke-linecap="round"/>
+          </svg>
+          <span class="activity-tag-pill tag-sports">Soccer</span>
+        </div>
+        <div class="activity-body">
+          <div class="activity-name">Breakaway Soccer</div>
+          <div class="activity-desc">Experience a full soccer showdown with three modes of play. Take penalty kicks, practice on targets, or work through passing drills. Difficulty adjusts for every player, making it equally fun for kids and adults.</div>
+          <div class="activity-modes">
+            <span class="mode-pill">Penalty kicks</span>
+            <span class="mode-pill">Target practice</span>
+            <span class="mode-pill">Passing mode</span>
+          </div>
+          <div class="activity-meta">
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Players</span>
+              <span class="activity-meta-value">Up to 8</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Best for</span>
+              <span class="activity-meta-value">Families &amp; kids</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Equipment</span>
+              <span class="activity-meta-value">Ball included</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOOPS -->
+      <div class="activity-card" data-category="sports">
+        <div class="activity-visual">
+          <svg class="activity-visual-icon" width="120" height="120" viewBox="0 0 120 120" fill="none">
+            <circle cx="60" cy="55" r="25" stroke="#0D0D0D" stroke-width="2.5"/>
+            <path d="M45 45 Q55 50 45 60" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M75 45 Q65 50 75 60" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="35" y1="85" x2="85" y2="85" stroke="#0D0D0D" stroke-width="2.5" stroke-linecap="round"/>
+            <ellipse cx="60" cy="85" rx="14" ry="5" stroke="#0D0D0D" stroke-width="1.5"/>
+            <line x1="54" y1="80" x2="54" y2="95" stroke="#0D0D0D" stroke-width="1.5"/>
+            <line x1="66" y1="80" x2="66" y2="95" stroke="#0D0D0D" stroke-width="1.5"/>
+          </svg>
+          <span class="activity-tag-pill tag-sports">Basketball</span>
+        </div>
+        <div class="activity-body">
+          <div class="activity-name">HOOPS</div>
+          <div class="activity-desc">Take your shooting game to the next level with this basketball simulation challenge. Nail free throws, three-pointers, and time-pressure shooting challenges. Competitive scoring makes it a crowd favorite at parties.</div>
+          <div class="activity-modes">
+            <span class="mode-pill">Free throw</span>
+            <span class="mode-pill">3-point contest</span>
+            <span class="mode-pill">Timed challenges</span>
+          </div>
+          <div class="activity-meta">
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Players</span>
+              <span class="activity-meta-value">Up to 8</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Best for</span>
+              <span class="activity-meta-value">All events</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Skill level</span>
+              <span class="activity-meta-value">All levels</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PARTY GAMES ── -->
+      <div class="category-header" data-category-label="party-header">
+        <span class="category-title">Party Games</span>
+        <span class="category-line"></span>
+        <span class="category-num">4 activities</span>
+      </div>
+
+      <!-- ZOMBIE DODGEBALL -->
+      <div class="activity-card" data-category="party">
+        <div class="activity-visual">
+          <svg class="activity-visual-icon" width="120" height="120" viewBox="0 0 120 120" fill="none">
+            <circle cx="60" cy="50" r="22" stroke="#0D0D0D" stroke-width="2.5"/>
+            <line x1="48" y1="40" x2="42" y2="35" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="72" y1="40" x2="78" y2="35" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="52" cy="48" r="3" stroke="#0D0D0D" stroke-width="1.5"/>
+            <circle cx="68" cy="48" r="3" stroke="#0D0D0D" stroke-width="1.5"/>
+            <path d="M50 60 Q60 56 70 60" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M38 72 Q60 78 82 72" stroke="#0D0D0D" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="30" cy="85" r="8" stroke="#0D0D0D" stroke-width="1.5"/>
+            <circle cx="90" cy="85" r="8" stroke="#0D0D0D" stroke-width="1.5"/>
+          </svg>
+          <span class="activity-tag-pill tag-party">Party</span>
+        </div>
+        <div class="activity-body">
+          <div class="activity-name">Zombie Dodgeball</div>
+          <div class="activity-desc">The one everyone talks about. Three games in one: Ghost Hunt (kid-friendly graveyard), Ice Zombies (armed with fireballs), and Pirate Battle (defend your ship from zombie pirates). Three difficulty levels, maximum chaos.</div>
+          <div class="activity-modes">
+            <span class="mode-pill">Ghost Hunt</span>
+            <span class="mode-pill">Ice Zombies</span>
+            <span class="mode-pill">Pirate Battle</span>
+          </div>
+          <div class="activity-meta">
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Players</span>
+              <span class="activity-meta-value">Up to 8</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Best for</span>
+              <span class="activity-meta-value">All ages · goes viral</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Skill level</span>
+              <span class="activity-meta-value">3 difficulty settings</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOWL-A-RAMA -->
+      <div class="activity-card" data-category="party">
+        <div class="activity-visual">
+          <svg class="activity-visual-icon" width="120" height="120" viewBox="0 0 120 120" fill="none">
+            <circle cx="60" cy="45" r="20" stroke="#0D0D0D" stroke-width="2.5"/>
+            <circle cx="54" cy="42" r="3" fill="#0D0D0D"/>
+            <circle cx="64" cy="40" r="3" fill="#0D0D0D"/>
+            <circle cx="63" cy="51" r="3" fill="#0D0D0D"/>
+            <path d="M28 80 L36 72 L44 80 L52 72 L60 80 L68 72 L76 80 L84 72 L92 80" stroke="#0D0D0D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+          <span class="activity-tag-pill tag-party">Bowling</span>
+        </div>
+        <div class="activity-body">
+          <div class="activity-name">Bowl-a-Rama</div>
+          <div class="activity-desc">No rental shoes required. Your simulator transforms into a fully immersive bowling alley — up to 8 players, 10 frames, bumper options for beginners, and vivid sound and lighting effects that recreate a classic night at the lanes.</div>
+          <div class="activity-modes">
+            <span class="mode-pill">Up to 10 frames</span>
+            <span class="mode-pill">Bumper option</span>
+            <span class="mode-pill">Visual themes</span>
+            <span class="mode-pill">Multiplayer</span>
+          </div>
+          <div class="activity-meta">
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Players</span>
+              <span class="activity-meta-value">Up to 8</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Best for</span>
+              <span class="activity-meta-value">Families · parties</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Skill level</span>
+              <span class="activity-meta-value">All ages</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CORNHOLE -->
+      <div class="activity-card" data-category="party">
+        <div class="activity-visual">
+          <svg class="activity-visual-icon" width="120" height="120" viewBox="0 0 120 120" fill="none">
+            <rect x="28" y="50" width="64" height="40" rx="4" stroke="#0D0D0D" stroke-width="2.5"/>
+            <circle cx="60" cy="70" r="10" stroke="#0D0D0D" stroke-width="2.5"/>
+            <path d="M36 50 L50 28 L70 28 L84 50" stroke="#0D0D0D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="38" cy="38" r="5" stroke="#0D0D0D" stroke-width="1.5"/>
+          </svg>
+          <span class="activity-tag-pill tag-party">Classic</span>
+        </div>
+        <div class="activity-body">
+          <div class="activity-name">Cornhole</div>
+          <div class="activity-desc">Your favorite backyard game brought to life like never before. Play classic Cornhole, Tic Tac Toe, or 301 — complete with single and multiplayer options and adjustable difficulty. The perfect icebreaker for any crowd.</div>
+          <div class="activity-modes">
+            <span class="mode-pill">Classic Cornhole</span>
+            <span class="mode-pill">Tic Tac Toe</span>
+            <span class="mode-pill">301</span>
+          </div>
+          <div class="activity-meta">
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Players</span>
+              <span class="activity-meta-value">Up to 8</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Best for</span>
+              <span class="activity-meta-value">All ages · icebreaker</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Skill level</span>
+              <span class="activity-meta-value">Beginner-friendly</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DISC-GO GOLF -->
+      <div class="activity-card" data-category="party">
+        <div class="activity-visual">
+          <svg class="activity-visual-icon" width="120" height="120" viewBox="0 0 120 120" fill="none">
+            <ellipse cx="60" cy="55" rx="30" ry="10" stroke="#0D0D0D" stroke-width="2.5"/>
+            <ellipse cx="60" cy="55" rx="18" ry="6" stroke="#0D0D0D" stroke-width="1.5"/>
+            <line x1="60" y1="20" x2="60" y2="45" stroke="#0D0D0D" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="60" y1="45" x2="80" y2="35" stroke="#0D0D0D" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="60" cy="85" r="5" stroke="#0D0D0D" stroke-width="1.5"/>
+          </svg>
+          <span class="activity-tag-pill tag-party">Disc Golf</span>
+        </div>
+        <div class="activity-body">
+          <div class="activity-name">Disc-Go Golf</div>
+          <div class="activity-desc">Shape shots with a flying disc across four uniquely designed courses. Activate Disc-Struction Mode to hit explosive targets for bonus points. Three difficulty settings make this accessible and surprisingly addictive for all ages.</div>
+          <div class="activity-modes">
+            <span class="mode-pill">4 courses</span>
+            <span class="mode-pill">Disc-Struction mode</span>
+            <span class="mode-pill">3 difficulty levels</span>
+          </div>
+          <div class="activity-meta">
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Players</span>
+              <span class="activity-meta-value">Up to 8</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Best for</span>
+              <span class="activity-meta-value">Mixed groups</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Equipment</span>
+              <span class="activity-meta-value">Frisbee included</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SHOOTING & TARGET ── -->
+      <div class="category-header" data-category-label="kids-header">
+        <span class="category-title">Shooting &amp; Target Games</span>
+        <span class="category-line"></span>
+        <span class="category-num">3 activities</span>
+      </div>
+
+      <!-- WILD WEST -->
+      <div class="activity-card" data-category="kids">
+        <div class="activity-visual">
+          <svg class="activity-visual-icon" width="120" height="120" viewBox="0 0 120 120" fill="none">
+            <path d="M30 75 L50 55 L60 65 L80 40 L90 50" stroke="#0D0D0D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="85" cy="38" r="8" stroke="#0D0D0D" stroke-width="2.5"/>
+            <line x1="85" y1="20" x2="85" y2="30" stroke="#0D0D0D" stroke-width="2" stroke-linecap="round"/>
+            <line x1="85" y1="46" x2="85" y2="56" stroke="#0D0D0D" stroke-width="2" stroke-linecap="round"/>
+            <line x1="70" y1="38" x2="78" y2="38" stroke="#0D0D0D" stroke-width="2" stroke-linecap="round"/>
+            <line x1="92" y1="38" x2="100" y2="38" stroke="#0D0D0D" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="activity-tag-pill tag-kids">Shooting</span>
+        </div>
+        <div class="activity-body">
+          <div class="activity-name">Wild West Shooting Gallery</div>
+          <div class="activity-desc">Saddle up for a classic arcade rail shooter experience across three Western-themed games at varying difficulty. The light gun plugs right in for instant play. A crowd-pleasing throwback that works for every age group.</div>
+          <div class="activity-modes">
+            <span class="mode-pill">3 Western games</span>
+            <span class="mode-pill">Light gun</span>
+            <span class="mode-pill">3 difficulty levels</span>
+          </div>
+          <div class="activity-meta">
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Players</span>
+              <span class="activity-meta-value">Up to 8</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Best for</span>
+              <span class="activity-meta-value">All ages</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Equipment</span>
+              <span class="activity-meta-value">Light gun included</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WILDERNESS HUNTER -->
+      <div class="activity-card" data-category="kids">
+        <div class="activity-visual">
+          <svg class="activity-visual-icon" width="120" height="120" viewBox="0 0 120 120" fill="none">
+            <path d="M25 85 Q40 60 60 50 Q80 40 95 35" stroke="#0D0D0D" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <circle cx="82" cy="42" r="12" stroke="#0D0D0D" stroke-width="2.5"/>
+            <line x1="82" y1="25" x2="82" y2="30" stroke="#0D0D0D" stroke-width="2" stroke-linecap="round"/>
+            <line x1="82" y1="54" x2="82" y2="59" stroke="#0D0D0D" stroke-width="2" stroke-linecap="round"/>
+            <line x1="66" y1="42" x2="71" y2="42" stroke="#0D0D0D" stroke-width="2" stroke-linecap="round"/>
+            <line x1="93" y1="42" x2="98" y2="42" stroke="#0D0D0D" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="82" cy="42" r="3" fill="#0D0D0D"/>
+          </svg>
+          <span class="activity-tag-pill tag-kids">Hunting</span>
+        </div>
+        <div class="activity-body">
+          <div class="activity-name">Wilderness Hunter</div>
+          <div class="activity-desc">A nature-themed target shooting game that takes players through scenic wilderness environments. Hunt targets, score points, and challenge your accuracy. Family-friendly and surprisingly competitive across different skill levels.</div>
+          <div class="activity-modes">
+            <span class="mode-pill">Target hunting</span>
+            <span class="mode-pill">Scenic environments</span>
+            <span class="mode-pill">Accuracy scoring</span>
+          </div>
+          <div class="activity-meta">
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Players</span>
+              <span class="activity-meta-value">Up to 8</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Best for</span>
+              <span class="activity-meta-value">Family events</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Skill level</span>
+              <span class="activity-meta-value">All levels</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUARTERBACKS -->
+      <div class="activity-card" data-category="kids corp">
+        <div class="activity-visual">
+          <svg class="activity-visual-icon" width="120" height="120" viewBox="0 0 120 120" fill="none">
+            <ellipse cx="60" cy="60" rx="28" ry="18" stroke="#0D0D0D" stroke-width="2.5"/>
+            <line x1="60" y1="42" x2="60" y2="78" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="38" y1="52" x2="82" y2="52" stroke="#0D0D0D" stroke-width="1" stroke-linecap="round"/>
+            <line x1="37" y1="60" x2="83" y2="60" stroke="#0D0D0D" stroke-width="1" stroke-linecap="round"/>
+            <line x1="38" y1="68" x2="82" y2="68" stroke="#0D0D0D" stroke-width="1" stroke-linecap="round"/>
+            <path d="M60 42 Q75 35 85 40" stroke="#0D0D0D" stroke-width="2" stroke-linecap="round" fill="none" stroke-dasharray="4 3"/>
+          </svg>
+          <span class="activity-tag-pill tag-corp">Football</span>
+        </div>
+        <div class="activity-body">
+          <div class="activity-name">Quarterbacks</div>
+          <div class="activity-desc">Step into the pocket and put your accuracy to the test. Throw for distance, precision targets, and timed challenges. A natural crowd-pleaser for football fans and one of the strongest corporate team-building activities in the lineup.</div>
+          <div class="activity-modes">
+            <span class="mode-pill">Accuracy challenge</span>
+            <span class="mode-pill">Distance throw</span>
+            <span class="mode-pill">Timed mode</span>
+          </div>
+          <div class="activity-meta">
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Players</span>
+              <span class="activity-meta-value">Up to 8</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Best for</span>
+              <span class="activity-meta-value">Corporate · parties</span>
+            </div>
+            <div class="activity-meta-item">
+              <span class="activity-meta-label">Equipment</span>
+              <span class="activity-meta-value">Football included</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM CTA -->
+    <div class="activities-cta">
+      <div class="cta-text">
+        <div class="cta-label">All 14 activities included</div>
+        <h2 class="cta-title">Every package includes<br>the <em>full lineup.</em></h2>
+        <p class="cta-sub">You don't pick a sport — you get all of them. Switch between golf, bowling, zombie dodgeball, and baseball in the same event. Your attendant handles it all.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="index.html#pricing" class="btn btn-offwhite btn-lg">View Packages</a>
+        <a href="index.html#area" class="btn btn-ghost btn-lg">Check Your Location</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <svg width="52" height="52" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="110" cy="110" r="104" fill="none" stroke="#F5F2EC" stroke-width="2.5"/>
+          <circle cx="110" cy="110" r="97" fill="none" stroke="#C8BEA8" stroke-width="0.85"/>
+          <text x="110" y="52" font-family="'Raleway',sans-serif" font-size="11" font-weight="400" fill="#C8BEA8" text-anchor="middle" dominant-baseline="central" letter-spacing="5">THE</text>
+          <text x="110" y="88" font-family="'Raleway',sans-serif" font-size="34" font-weight="600" fill="#F5F2EC" text-anchor="middle" dominant-baseline="central" letter-spacing="3">SEAMS</text>
+          <line x1="62" y1="107" x2="158" y2="107" stroke="#C8BEA8" stroke-width="0.85"/>
+          <text x="110" y="131" font-family="'Raleway',sans-serif" font-size="34" font-weight="600" fill="#F5F2EC" text-anchor="middle" dominant-baseline="central" letter-spacing="3">GOOD</text>
+          <text x="110" y="166" font-family="'Raleway',sans-serif" font-size="11" font-weight="400" fill="#C8BEA8" text-anchor="middle" dominant-baseline="central" letter-spacing="7">CO.</text>
+        </svg>
+        <p>Mobile multi-sport simulator rentals serving New Jersey. Based in Monmouth County. Available for corporate events, private parties, and any occasion worth celebrating.</p>
+      </div>
+      <div>
+        <div class="footer-col-label">Explore</div>
+        <ul class="footer-links">
+          <li><a href="activities.html">All 14 Activities</a></li>
+          <li><a href="index.html#how">How It Works</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="index.html#area">Service Area</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-label">Events</div>
+        <ul class="footer-links">
+          <li><a href="#">Corporate Events</a></li>
+          <li><a href="#">Birthday Parties</a></li>
+          <li><a href="#">Bachelor Parties</a></li>
+          <li><a href="#">Date Nights</a></li>
+          <li><a href="#">Team Building</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-label">Contact</div>
+        <ul class="footer-links">
+          <li><a href="mailto:hello@seamsgoodco.com">hello@seamsgoodco.com</a></li>
+          <li><a href="tel:+17325550100">(732) 555-0100</a></li>
+          <li><a href="#">Monmouth County, NJ</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 SeamsGoodCo. · All rights reserved · Monmouth County, NJ</p>
+      <p>seamsgoodco.com</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ── CATEGORY FILTER ── */
+  function filterActivities(filter, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const cards = document.querySelectorAll('.activity-card');
+    const headers = document.querySelectorAll('.category-header');
+
+    cards.forEach(card => {
+      const cats = card.dataset.category || '';
+      if (filter === 'all' || cats.includes(filter)) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+
+    // Show/hide category headers based on whether any cards in that section are visible
+    if (filter === 'all') {
+      headers.forEach(h => h.style.display = '');
+    } else {
+      headers.forEach(h => h.style.display = 'none');
+    }
+  }
+
+  /* ── SCROLL REVEAL ── */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.activity-card').forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = `opacity 0.5s ease ${i * 0.04}s, transform 0.5s ease ${i * 0.04}s`;
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
